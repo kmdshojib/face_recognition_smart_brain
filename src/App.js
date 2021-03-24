@@ -8,6 +8,7 @@ import Rank from './Components/Rank';
 import ImageLinkForm from './Components/ImageLinkForm';
 import FaceRecogintion from './Components/FaceRecogintion';
 import SignIn from './Components/signIn/signin';
+import Register from './Components/Reegister/register';
 
 const app = new Clarifai.App({
  apiKey: '9aa93ce48b66460f85b3b39e6a0b2cb2'
@@ -32,7 +33,8 @@ class App extends Component {
         input: '',
         imageUrl:'',
         box: {},
-        route:'signin'
+        route:'signin',
+        isSgnedIn:false
       }
   }
   calulateFaceloaction =(data)=>{
@@ -66,24 +68,35 @@ onButtonSubmit =()=>{
         .catch(err => console.log(err))
 }
 onRouteChange =(route) =>{
+  if(route === 'signout'){
+    this.setState({isSgnedIn:false})
+  }else if(route === 'home'){
+    this.setState({isSgnedIn:true})
+  }
   this.setState({route:route})
 }
   render(){
+    const {isSgnedIn,imageUrl,route,box} = this.state;
      return (
     <div className="App">
      <Particles className='paricles'
        params={paricleOption}
      />
-      <Navigation onRouteChange={this.onRouteChange}/>
+      <Navigation isSgnedIn={isSgnedIn} onRouteChange={this.onRouteChange}/>
 
-     {this.state.route === 'signin' 
-    ?<SignIn onRouteChange ={this.onRouteChange}/>
-      :<div> 
+     {route === 'home' 
+    
+    ?<div> 
         <Logo />
         <Rank />
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
-        <FaceRecogintion box={this.state.box} imageUrl={this.state.imageUrl} />
+        <FaceRecogintion box={box} imageUrl={imageUrl} />
     </div> 
+    :(
+      route === 'signin'
+      ?<SignIn onRouteChange ={this.onRouteChange}/>
+      :<Register onRouteChange ={this.onRouteChange}/>
+    )
     }
     </div>
   );
