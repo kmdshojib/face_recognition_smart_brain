@@ -6,7 +6,8 @@ import Navigation from './Components/Navigation';
 import Logo from './Components/Logo';
 import Rank from './Components/Rank';
 import ImageLinkForm from './Components/ImageLinkForm';
-import FaceRecogintion from './Components/FaceRecogintion'
+import FaceRecogintion from './Components/FaceRecogintion';
+import SignIn from './Components/signIn/signin';
 
 const app = new Clarifai.App({
  apiKey: '9aa93ce48b66460f85b3b39e6a0b2cb2'
@@ -30,8 +31,27 @@ class App extends Component {
       this.state ={
         input: '',
         imageUrl:'',
+        box: {},
+        route:'signin'
       }
   }
+  calulateFaceloaction =(data)=>{
+     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+     const image  = document.getElementById('inputImage');
+     const width = Number(image.width);
+     const height =Number(image.height);
+    return{
+      leftCol:clarifaiFace.left_col * width,
+      topRow:clarifaiFace.top_row * height,
+      rightCol:width - (clarifaiFace.right_col * width),
+      bottomRow: height - (clarifaiFace.bottom_row * height),
+    }
+  }
+
+displayFaceBox =(box) =>{
+  console.log(box);
+  this.setState({box:box})
+}
 onInputChange = (event) => {
   this.setState( {input:event.target.value});
 }
@@ -42,14 +62,11 @@ onButtonSubmit =()=>{
     .predict(
         Clarifai.FACE_DETECT_MODEL,
           this.state.input)
-        .then(
-        function(response){
-        console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
-        },
-        function(err){
-
-        }
-      );
+        .then(response =>this.displayFaceBox( this.calulateFaceloaction(response)))
+        .catch(err => console.log(err))
+}
+onRouteChange =(route) =>{
+  this.setState({route:route})
 }
   render(){
      return (
@@ -57,11 +74,17 @@ onButtonSubmit =()=>{
      <Particles className='paricles'
        params={paricleOption}
      />
-      <Navigation />
-      <Logo />
-      <Rank />
-      <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
-      <FaceRecogintion imageUrl={this.state.imageUrl} />
+      <Navigation onRouteChange={this.onRouteChange}/>
+
+     {this.state.route === 'signin' 
+    ?<SignIn onRouteChange ={this.onRouteChange}/>
+      :<div> 
+        <Logo />
+        <Rank />
+        <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
+        <FaceRecogintion box={this.state.box} imageUrl={this.state.imageUrl} />
+    </div> 
+    }
     </div>
   );
   }
