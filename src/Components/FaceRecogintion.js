@@ -1,5 +1,5 @@
 import React from 'react';
-import './Face.css'
+import './style/Face.css'
 
 const FaceRecogintion =({imageUrl, box})=>{
     return(
