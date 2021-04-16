@@ -93,7 +93,7 @@ onInputChange = (event) => {
 
 onButtonSubmit =()=>{
     this.setState({imageUrl: this.state.input})
-        fetch('http://localhost:3000/imageUrl',{
+        fetch('https://cryptic-depths-48111.herokuapp.com/imageUrl',{
               method:'post',
               headers:{'Content-Type':'application/json'},
               body:JSON.stringify({
@@ -103,7 +103,7 @@ onButtonSubmit =()=>{
           .then(response=> response.json())
         .then(response =>{
           if(response) {
-            fetch('http://localhost:3000/image',{
+            fetch('https://cryptic-depths-48111.herokuapp.com/image',{
               method:'put',
               headers:{'Content-Type':'application/json'},
               body:JSON.stringify({
