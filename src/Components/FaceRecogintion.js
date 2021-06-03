@@ -6,10 +6,11 @@ const FaceRecogintion =({imageUrl, box})=>{
         <div className='center ma'>
         <div className="absolute mt2 ">
             <img id='inputImage' alt='' src={imageUrl} width="500px" height="auto" />
-            <div className="bounding-box" style={{top: box.topRow, right: box.rightCol, left: box.leftCol, bottom: box.bottomRow }}></div>
-        </div>
-        
-         
+            {box.map(boxes =>{
+              return  <div key={boxes.topRow} className="bounding-box" style={{top: boxes.topRow, right: boxes.rightCol, left: boxes.leftCol, bottom: boxes.bottomRow }}></div>
+            })
+            }  
+        </div>  
         </div>
     )
 }
