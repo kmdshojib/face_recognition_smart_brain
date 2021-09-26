@@ -14,10 +14,10 @@ import Register from './Components/Reegister/register';
 const paricleOption ={
     particles:{
       number:{
-        value:80,
+        value:50,
         density:{
           enable:true,
-          value_area:400
+          value_area:350
         }
       }
     }
@@ -149,7 +149,7 @@ onRouteChange =(route) =>{
         <Logo />
         <Rank name={this.state.user.name} entries={this.state.user.entries}/>
         <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit}/>
-        <FaceRecogintion box={box} imageUrl={imageUrl} />
+        <FaceRecogintion className="d-flex" box={box} imageUrl={imageUrl} />
     </div> 
     :(
       route === 'signin'
