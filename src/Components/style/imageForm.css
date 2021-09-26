@@ -10,4 +10,7 @@
         background-size: 40px 60px;
 }
 
-
+::-webkit-input-placeholder { 
+    font-size: 12px;
+    color: red;
+  }
