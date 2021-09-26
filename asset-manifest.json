@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/face_recognition_smart_brain/static/css/main.49df6dc2.chunk.css",
-    "main.js": "/face_recognition_smart_brain/static/js/main.ce0168c1.chunk.js",
-    "main.js.map": "/face_recognition_smart_brain/static/js/main.ce0168c1.chunk.js.map",
-    "runtime-main.js": "/face_recognition_smart_brain/static/js/runtime-main.afe74544.js",
-    "runtime-main.js.map": "/face_recognition_smart_brain/static/js/runtime-main.afe74544.js.map",
+    "main.css": "/face_recognition_smart_brain/static/css/main.83d1b5b8.chunk.css",
+    "main.js": "/face_recognition_smart_brain/static/js/main.64e2d339.chunk.js",
+    "main.js.map": "/face_recognition_smart_brain/static/js/main.64e2d339.chunk.js.map",
+    "runtime-main.js": "/face_recognition_smart_brain/static/js/runtime-main.1066eb24.js",
+    "runtime-main.js.map": "/face_recognition_smart_brain/static/js/runtime-main.1066eb24.js.map",
     "static/css/2.fe359a49.chunk.css": "/face_recognition_smart_brain/static/css/2.fe359a49.chunk.css",
-    "static/js/2.b0f7dbc4.chunk.js": "/face_recognition_smart_brain/static/js/2.b0f7dbc4.chunk.js",
-    "static/js/2.b0f7dbc4.chunk.js.map": "/face_recognition_smart_brain/static/js/2.b0f7dbc4.chunk.js.map",
-    "static/js/3.51b4cc0b.chunk.js": "/face_recognition_smart_brain/static/js/3.51b4cc0b.chunk.js",
-    "static/js/3.51b4cc0b.chunk.js.map": "/face_recognition_smart_brain/static/js/3.51b4cc0b.chunk.js.map",
+    "static/js/2.27e227de.chunk.js": "/face_recognition_smart_brain/static/js/2.27e227de.chunk.js",
+    "static/js/2.27e227de.chunk.js.map": "/face_recognition_smart_brain/static/js/2.27e227de.chunk.js.map",
+    "static/js/3.3df05a8c.chunk.js": "/face_recognition_smart_brain/static/js/3.3df05a8c.chunk.js",
+    "static/js/3.3df05a8c.chunk.js.map": "/face_recognition_smart_brain/static/js/3.3df05a8c.chunk.js.map",
     "index.html": "/face_recognition_smart_brain/index.html",
     "static/css/2.fe359a49.chunk.css.map": "/face_recognition_smart_brain/static/css/2.fe359a49.chunk.css.map",
-    "static/css/main.49df6dc2.chunk.css.map": "/face_recognition_smart_brain/static/css/main.49df6dc2.chunk.css.map",
-    "static/js/2.b0f7dbc4.chunk.js.LICENSE.txt": "/face_recognition_smart_brain/static/js/2.b0f7dbc4.chunk.js.LICENSE.txt"
+    "static/css/main.83d1b5b8.chunk.css.map": "/face_recognition_smart_brain/static/css/main.83d1b5b8.chunk.css.map",
+    "static/js/2.27e227de.chunk.js.LICENSE.txt": "/face_recognition_smart_brain/static/js/2.27e227de.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.afe74544.js",
+    "static/js/runtime-main.1066eb24.js",
     "static/css/2.fe359a49.chunk.css",
-    "static/js/2.b0f7dbc4.chunk.js",
-    "static/css/main.49df6dc2.chunk.css",
-    "static/js/main.ce0168c1.chunk.js"
+    "static/js/2.27e227de.chunk.js",
+    "static/css/main.83d1b5b8.chunk.css",
+    "static/js/main.64e2d339.chunk.js"
   ]
 }
